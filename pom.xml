@@ -7,9 +7,19 @@
   <packaging>pom</packaging>
   <name>Archetype - clinica-medica</name>
   <url>http://maven.apache.org</url>
+
   <modules>
     <module>clinica-administrativo</module>
     <module>clinica-agendamento</module>
     <module>clinica-atendimento</module>
   </modules>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>3.2.5</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>

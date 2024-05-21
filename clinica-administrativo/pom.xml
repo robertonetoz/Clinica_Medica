@@ -9,4 +9,11 @@
     <artifactId>clinica-administrativo</artifactId>
     <name>Archetype - clinica-administrativo</name>
     <url>http://maven.apache.org</url>
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
 </project>

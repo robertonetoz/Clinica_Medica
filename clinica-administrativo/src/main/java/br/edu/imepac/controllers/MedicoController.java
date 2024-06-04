@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("medicos")
+
 public class MedicoController {
     @Autowired
     private MedicoService medicoService;

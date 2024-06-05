@@ -1,12 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.example</groupId>
+
+
+
+  <groupId>br.edu.imepac</groupId>
   <artifactId>clinica-medica</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Archetype - clinica-medica</name>
   <url>http://maven.apache.org</url>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
 
   <modules>
     <module>clinica-administrativo</module>
@@ -14,13 +23,7 @@
     <module>clinica-atendimento</module>
   </modules>
 
-
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
-
-    <dependencyManagement>
+  <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -35,7 +38,7 @@
       <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
-        <version>1.18.24</version>
+        <version>1.18.24</version> <!-- Use a versão mais recente disponível -->
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -43,15 +46,21 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>8.0.27</version>
       </dependency>
+      <dependency>
+        <groupId>org.modelmapper</groupId>
+        <artifactId>modelmapper</artifactId>
+        <version>2.4.4</version>
+      </dependency>
+
+
     </dependencies>
   </dependencyManagement>
-
-
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
         <configuration>
           <compilerArgs>
             <arg>-parameters</arg>
@@ -60,6 +69,4 @@
       </plugin>
     </plugins>
   </build>
-
-
 </project>

@@ -1,9 +1,8 @@
-package br.edu.imepac.controllers;
-
-import org.springframework.web.bind.annotation.RestController;
 import br.edu.imepac.dtos.MedicoCreateRequest;
 import br.edu.imepac.dtos.MedicoDto;
 import br.edu.imepac.services.MedicoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,16 +10,19 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
-@RequestMapping("medicos")
-
+@RequestMapping("medico")
 public class MedicoController {
+
+    private static final Logger logger = LoggerFactory.getLogger(MedicoController.class);
+
     @Autowired
     private MedicoService medicoService;
 
+
     @PostMapping
     public ResponseEntity<MedicoDto> saveDoctor(@RequestBody MedicoCreateRequest medicoCreateRequest) {
+        logger.info("Request MedicoCreateRequest " );
         MedicoDto savedMedico = medicoService.save(medicoCreateRequest);
         return new ResponseEntity<>(savedMedico, HttpStatus.CREATED);
     }

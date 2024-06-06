@@ -1,105 +1,69 @@
 package br.edu.imepac.services;
 
-import br.edu.imepac.dtos.EspecialidadeDto;
 import br.edu.imepac.dtos.EspecialidadeCreateRequest;
+import br.edu.imepac.dtos.EspecialidadeDto;
 import br.edu.imepac.models.EspecialidadeModel;
 import br.edu.imepac.repositories.EspecialidadeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-
-
 @Service
 public class EspecialidadeService {
 
 
 
-    @Autowired
+
     private EspecialidadeRepository especialidadeRepository;
-
-    public EspecialidadeDto save(EspecialidadeCreateRequest especialidadeCreateRequest) {
-        EspecialidadeModel especialidadeModel = new EspecialidadeModel();
-
-        especialidadeModel.setNome(especialidadeCreateRequest.getNome());
-        especialidadeModel.setDescricao(especialidadeCreateRequest.getDescricao());
+    private ModelMapper modelMapper;
 
 
-        EspecialidadeModel savedEspecialidade = especialidadeRepository.save(especialidadeModel);
 
-        EspecialidadeDto especialidadeDto = new EspecialidadeDto();
-
-        especialidadeDto.setId(savedEspecialidade.getId());
-        especialidadeDto.setNome(savedEspecialidade.getNome());
-        especialidadeDto.setDescricao(savedEspecialidade.getDescricao());
+    public EspecialidadeService(EspecialidadeRepository especialidadeRepository, ModelMapper modelMapper) {
+        this.especialidadeRepository = especialidadeRepository;
+        this.modelMapper = modelMapper;
+    }
 
 
-        return especialidadeDto;
+
+    public void delete(Long id) {
+        especialidadeRepository.deleteById(id);
     }
 
 
 
 
-    //função listar todas as especialidades
     public List<EspecialidadeDto> findAll() {
-        return especialidadeRepository.findAll().stream().map(especialidade -> {
-
+        List<EspecialidadeModel> especialidades = especialidadeRepository.findAll();
+        return especialidades.stream().map(especialidade -> {
             EspecialidadeDto especialidadeDto = new EspecialidadeDto();
-
             especialidadeDto.setId(especialidade.getId());
             especialidadeDto.setNome(especialidade.getNome());
             especialidadeDto.setDescricao(especialidade.getDescricao());
-
-
             return especialidadeDto;
-
         }).collect(Collectors.toList());
     }
 
 
 
 
-
-    //buscar pelo id do convenio
-    public Optional<EspecialidadeDto> findById(Long id) {
-        return especialidadeRepository.findById(id).map(especialidade -> {
-
-            EspecialidadeDto especialidadeDto = new EspecialidadeDto();
-
-            especialidadeDto.setId(especialidade.getId());
-            especialidadeDto.setNome(especialidade.getNome());
-            especialidadeDto.setDescricao(especialidade.getDescricao());
-
-
-            return especialidadeDto;
-        });
-    }
-
-
-
-
-    //função update
     public EspecialidadeDto update(Long id, EspecialidadeDto especialidadeDetails) {
         Optional<EspecialidadeModel> optionalEspecialidade = especialidadeRepository.findById(id);
+
         if (optionalEspecialidade.isPresent()) {
-
             EspecialidadeModel especialidadeModel = optionalEspecialidade.get();
-
             especialidadeModel.setNome(especialidadeDetails.getNome());
             especialidadeModel.setDescricao(especialidadeDetails.getDescricao());
-            // outros atributos
 
             EspecialidadeModel updatedEspecialidade = especialidadeRepository.save(especialidadeModel);
 
             EspecialidadeDto especialidadeDto = new EspecialidadeDto();
-
             especialidadeDto.setId(updatedEspecialidade.getId());
             especialidadeDto.setNome(updatedEspecialidade.getNome());
             especialidadeDto.setDescricao(updatedEspecialidade.getDescricao());
-
 
             return especialidadeDto;
         } else {
@@ -110,10 +74,25 @@ public class EspecialidadeService {
 
 
 
-    //função deletar
-    public void delete(Long id) {
-        especialidadeRepository.deleteById(id);
 
+    public EspecialidadeDto save(EspecialidadeCreateRequest especialidadeRequest) {
+        EspecialidadeModel especialidadeModel = modelMapper.map(especialidadeRequest, EspecialidadeModel.class);
+        EspecialidadeModel savedEspecialidade = especialidadeRepository.save(especialidadeModel);
+        EspecialidadeDto especialidadeDto = modelMapper.map(savedEspecialidade, EspecialidadeDto.class);
+        return especialidadeDto;
+    }
 
+    public EspecialidadeDto findById(Long id) {
+        Optional<EspecialidadeModel> optionalEspecialidade = especialidadeRepository.findById(id);
+        if (optionalEspecialidade.isPresent()) {
+            EspecialidadeModel especialidadeModel = optionalEspecialidade.get();
+            EspecialidadeDto especialidadeDto = new EspecialidadeDto();
+            especialidadeDto.setId(especialidadeModel.getId());
+            especialidadeDto.setNome(especialidadeModel.getNome());
+            especialidadeDto.setDescricao(especialidadeModel.getDescricao());
+            return especialidadeDto;
+        } else {
+            return null;
+        }
     }
 }

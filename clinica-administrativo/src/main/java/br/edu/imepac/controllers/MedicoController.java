@@ -1,3 +1,5 @@
+package br.edu.imepac.controllers;
+
 import br.edu.imepac.dtos.MedicoCreateRequest;
 import br.edu.imepac.dtos.MedicoDto;
 import br.edu.imepac.services.MedicoService;

@@ -7,8 +7,11 @@ A aplicação está organizada em pacotes que seguem uma arquitetura típica de 
 ###
 🩺 **Gestão de Médicos**: permite criar, ler, atualizar e excluir médicos.
 
-
+###
+###
+###
 **Estrutura do Projeto**
+###
 🖥️ *Models*: contém as classes de modelo que representam as entidades do banco de dados. 
 ###
 🖥️ *Dtos*: contém os Data Transfer Objects usados para transferir dados entre as camadas da aplicação. 

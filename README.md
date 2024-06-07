@@ -7,8 +7,7 @@ A aplicação está organizada em pacotes que seguem uma arquitetura típica de 
 ###
 🩺 **Gestão de Médicos**: permite criar, ler, atualizar e excluir médicos.
 
-###
-###
+
 ###
 **Estrutura do Projeto**
 ###
@@ -20,4 +19,5 @@ A aplicação está organizada em pacotes que seguem uma arquitetura típica de 
 ###
 🖥️ *Services*: contém a lógica de negócios. 
 ###
-🖥️ *Controllers*: contém os controladores REST que expõem as APIs. ##
+🖥️ *Controllers*: contém os controladores REST que expõem as APIs.
+###

@@ -33,6 +33,8 @@ public class MedicoService {
             medicoDto.setId(medico.getId());
             medicoDto.setNome(medico.getNome());
             medicoDto.setCrm(medico.getCrm());
+            medicoDto.setEspecialidade(medico.getEspecialidade());
+
             return medicoDto;
         }).collect(Collectors.toList());
     }
@@ -44,6 +46,7 @@ public class MedicoService {
             MedicoModel medicoModel = optionalMedico.get();
             medicoModel.setNome(medicoDetails.getNome());
             medicoModel.setCrm(medicoDetails.getCrm());
+            medicoModel.setEspecialidade(medicoDetails.getEspecialidade());
 
             MedicoModel updatedMedico = medicoRepository.save(medicoModel);
 
@@ -51,6 +54,7 @@ public class MedicoService {
             medicoDto.setId(updatedMedico.getId());
             medicoDto.setNome(updatedMedico.getNome());
             medicoDto.setCrm(updatedMedico.getCrm());
+            medicoDto.setEspecialidade(updatedMedico.getEspecialidade());
 
             return medicoDto;
         } else {
@@ -73,6 +77,7 @@ public class MedicoService {
             medicoDto.setId(medicoModel.getId());
             medicoDto.setNome(medicoModel.getNome());
             medicoDto.setCrm(medicoModel.getCrm());
+            medicoDto.setEspecialidade(medicoModel.getEspecialidade());
             return medicoDto;
         } else {
             return null;

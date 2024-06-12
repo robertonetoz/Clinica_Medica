@@ -23,6 +23,7 @@ public class ConvenioService {
     }
 
     public void delete(Long id) {
+
         convenioRepository.deleteById(id);
     }
 
@@ -31,8 +32,12 @@ public class ConvenioService {
         return convenios.stream().map(convenio -> {
             ConvenioDto convenioDto = new ConvenioDto();
             convenioDto.setId(convenio.getId());
-            convenioDto.setNome(convenio.getNome());
-            convenioDto.setDescricao(convenio.getDescricao());
+            convenioDto.setEmpresa(convenio.getEmpresa());
+            convenioDto.setCNPJ(convenio.getCNPJ());
+            convenioDto.setTelefone(convenio.getTelefone());
+
+
+
             return convenioDto;
         }).collect(Collectors.toList());
     }
@@ -42,15 +47,19 @@ public class ConvenioService {
 
         if (optionalConvenio.isPresent()) {
             ConvenioModel convenioModel = optionalConvenio.get();
-            convenioModel.setNome(convenioDetails.getNome());
-            convenioModel.setDescricao(convenioDetails.getDescricao());
+            convenioModel.setEmpresa(convenioDetails.getEmpresa());
+            convenioModel.setCNPJ(convenioDetails.getCNPJ());
+            convenioModel.setTelefone(convenioDetails.getTelefone());
+
+
 
             ConvenioModel updatedConvenio = convenioRepository.save(convenioModel);
 
             ConvenioDto convenioDto = new ConvenioDto();
             convenioDto.setId(updatedConvenio.getId());
-            convenioDto.setNome(updatedConvenio.getNome());
-            convenioDto.setDescricao(updatedConvenio.getDescricao());
+            convenioDto.setEmpresa(updatedConvenio.getEmpresa());
+            convenioDto.setCNPJ(updatedConvenio.getCNPJ());
+            convenioDto.setTelefone(updatedConvenio.getTelefone());
 
             return convenioDto;
         } else {
@@ -71,8 +80,9 @@ public class ConvenioService {
             ConvenioModel convenioModel = optionalConvenio.get();
             ConvenioDto convenioDto = new ConvenioDto();
             convenioDto.setId(convenioModel.getId());
-            convenioDto.setNome(convenioModel.getNome());
-            convenioDto.setDescricao(convenioModel.getDescricao());
+            convenioDto.setEmpresa(convenioModel.getEmpresa());
+            convenioDto.setCNPJ(convenioModel.getCNPJ());
+            convenioDto.setTelefone(convenioModel.getTelefone());
             return convenioDto;
         } else {
             return null;

@@ -7,10 +7,12 @@ import lombok.Data;
 @Table(name = "convenios")
 @Data
 
-    public class ConvenioModel {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
-        private String nome;
-        private String descricao;
-    }
+public class ConvenioModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String empresa;
+    private String CNPJ;
+    private String telefone;
+
+}

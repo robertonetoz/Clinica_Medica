@@ -6,7 +6,8 @@ import lombok.Data;
 public class ConvenioDto {
 
         private Long id;
-        private String nome;
-        private String descricao;
+        private String empresa;
+        private String CNPJ;
+        private String telefone;
 
 }

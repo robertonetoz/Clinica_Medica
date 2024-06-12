@@ -6,7 +6,7 @@ import lombok.Data;
 public class EspecialidadeDto {
 
         private Long id;
-        private String nome;
+
         private String descricao;
 
 }

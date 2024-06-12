@@ -30,6 +30,7 @@ public class EspecialidadeService {
 
 
     public void delete(Long id) {
+
         especialidadeRepository.deleteById(id);
     }
 
@@ -41,7 +42,6 @@ public class EspecialidadeService {
         return especialidades.stream().map(especialidade -> {
             EspecialidadeDto especialidadeDto = new EspecialidadeDto();
             especialidadeDto.setId(especialidade.getId());
-            especialidadeDto.setNome(especialidade.getNome());
             especialidadeDto.setDescricao(especialidade.getDescricao());
             return especialidadeDto;
         }).collect(Collectors.toList());
@@ -55,14 +55,12 @@ public class EspecialidadeService {
 
         if (optionalEspecialidade.isPresent()) {
             EspecialidadeModel especialidadeModel = optionalEspecialidade.get();
-            especialidadeModel.setNome(especialidadeDetails.getNome());
             especialidadeModel.setDescricao(especialidadeDetails.getDescricao());
 
             EspecialidadeModel updatedEspecialidade = especialidadeRepository.save(especialidadeModel);
 
             EspecialidadeDto especialidadeDto = new EspecialidadeDto();
             especialidadeDto.setId(updatedEspecialidade.getId());
-            especialidadeDto.setNome(updatedEspecialidade.getNome());
             especialidadeDto.setDescricao(updatedEspecialidade.getDescricao());
 
             return especialidadeDto;
@@ -88,7 +86,6 @@ public class EspecialidadeService {
             EspecialidadeModel especialidadeModel = optionalEspecialidade.get();
             EspecialidadeDto especialidadeDto = new EspecialidadeDto();
             especialidadeDto.setId(especialidadeModel.getId());
-            especialidadeDto.setNome(especialidadeModel.getNome());
             especialidadeDto.setDescricao(especialidadeModel.getDescricao());
             return especialidadeDto;
         } else {

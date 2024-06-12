@@ -13,5 +13,6 @@ public class MedicoModel {
     private Long id;
     private String nome;
     private String crm;
+    private String especialidade;
     private String senha;
 }

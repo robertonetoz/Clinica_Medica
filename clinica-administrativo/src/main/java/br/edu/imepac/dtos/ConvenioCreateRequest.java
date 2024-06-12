@@ -5,8 +5,9 @@ import lombok.Data;
 @Data
 public class ConvenioCreateRequest {
 
-        private String id;
-        private String nome;
-        private String descricao;
+    private Long id;
+    private String empresa;
+    private String CNPJ;
+    private String telefone;
 
-    }
+}

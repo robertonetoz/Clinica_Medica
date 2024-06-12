@@ -5,6 +5,8 @@
 O projeto é uma aplicação ***Spring Boot*** para a administração de uma clínica, focada na gestão de convênios e médicos, até o momento! (Podendo sofrer novas alterações e implementações de outros recursos) 
 A aplicação está organizada em pacotes que seguem uma arquitetura típica de camadas, facilitando a manutenção e a escalabilidade do sistema. 📌
 
+📖 Livro utilizado como base do projeto: **Java para Web - Desenvolvimento de Aplicações | William Pereira Alves**
+
 ***
 📜 **FUNCIONALIDADES** 📜
 

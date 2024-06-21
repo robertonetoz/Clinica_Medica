@@ -22,10 +22,14 @@ public class ConvenioService {
         this.modelMapper = modelMapper;
     }
 
+
+
+
     public void delete(Long id) {
 
         convenioRepository.deleteById(id);
     }
+
 
     public List<ConvenioDto> findAll() {
         List<ConvenioModel> convenios = convenioRepository.findAll();

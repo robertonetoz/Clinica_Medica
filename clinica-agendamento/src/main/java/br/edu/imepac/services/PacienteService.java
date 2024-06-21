@@ -1,8 +1,8 @@
 package br.edu.imepac.services;
 
 import br.edu.imepac.dtos.PacienteCreateRequest;
-import br.edu.imepac.dtos.PacienteDtos;
-import br.edu.imepac.models.PacienteModels;
+import br.edu.imepac.dtos.PacienteDto;
+import br.edu.imepac.models.PacienteModel;
 import br.edu.imepac.repositories.PacienteRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -26,16 +26,16 @@ public class PacienteService {
         pacienteRepository.deleteById(id);
     }
 
-    public List<PacienteDtos> findAll() {
-        List<PacienteModels> pacientes = pacienteRepository.findAll();
-        return pacientes.stream().map(paciente -> modelMapper.map(paciente, PacienteDtos.class)).collect(Collectors.toList());
+    public List<PacienteDto> findAll() {
+        List<PacienteModel> pacientes = pacienteRepository.findAll();
+        return pacientes.stream().map(paciente -> modelMapper.map(paciente, PacienteDto.class)).collect(Collectors.toList());
     }
 
-    public PacienteDtos update(Long id, PacienteDtos pacienteDetails) {
-        Optional<PacienteModels> optionalPaciente = pacienteRepository.findById(id);
+    public PacienteDto update(Long id, PacienteDto pacienteDetails) {
+        Optional<PacienteModel> optionalPaciente = pacienteRepository.findById(id);
 
         if (optionalPaciente.isPresent()) {
-            PacienteModels pacienteModel = optionalPaciente.get();
+            PacienteModel pacienteModel = optionalPaciente.get();
             pacienteModel.setNome(pacienteDetails.getNome());
             pacienteModel.setRg(pacienteDetails.getRg());
             pacienteModel.setOrgaoEmissor(pacienteDetails.getOrgaoEmissor());
@@ -53,22 +53,25 @@ public class PacienteService {
             pacienteModel.setPossuiConvenio(pacienteDetails.getPossuiConvenio());
             pacienteModel.setNomeConvenio(pacienteDetails.getNomeConvenio());
 
-            PacienteModels updatedPaciente = pacienteRepository.save(pacienteModel);
+            PacienteModel updatedPaciente = pacienteRepository.save(pacienteModel);
 
-            return modelMapper.map(updatedPaciente, PacienteDtos.class);
+            return modelMapper.map(updatedPaciente, PacienteDto.class);
         } else {
             return null;
         }
     }
 
-    public PacienteDtos save(PacienteCreateRequest pacienteRequest) {
-        PacienteModels pacienteModel = modelMapper.map(pacienteRequest, PacienteModels.class);
-        PacienteModels savedPaciente = pacienteRepository.save(pacienteModel);
-        return modelMapper.map(savedPaciente, PacienteDtos.class);
+    public PacienteDto save(PacienteCreateRequest pacienteRequest) {
+        PacienteModel pacienteModel = modelMapper.map(pacienteRequest, PacienteModel.class);
+        PacienteModel savedPaciente = pacienteRepository.save(pacienteModel);
+        return modelMapper.map(savedPaciente, PacienteDto.class);
     }
 
-    public PacienteDtos findById(Long id) {
-        Optional<PacienteModels> optionalPaciente = pacienteRepository.findById(id);
-        return optionalPaciente.map(pacienteModel -> modelMapper.map(pacienteModel, PacienteDtos.class)).orElse(null);
+
+
+
+    public PacienteDto findById(Long id) {
+        Optional<PacienteModel> optionalPaciente = pacienteRepository.findById(id);
+        return optionalPaciente.map(pacienteModel -> modelMapper.map(pacienteModel, PacienteDto.class)).orElse(null);
     }
 }

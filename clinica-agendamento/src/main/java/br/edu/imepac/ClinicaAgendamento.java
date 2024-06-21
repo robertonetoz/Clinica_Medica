@@ -9,13 +9,14 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ClinicaAgendamento {
     public static void main (String[] args) {
+
         SpringApplication.run(ClinicaAgendamento.class, args);
     }
 
-    @Bean
+    @Bean (name = "agendamentoModelMapper")
     public ModelMapper modelMapper() {
+
         return new ModelMapper();
     }
-
 
 }

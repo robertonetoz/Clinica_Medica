@@ -1,2 +1,14 @@
-br\edu\imepac\models\PacientesModels.class
+br\edu\imepac\services\ConsultaService.class
+br\edu\imepac\repositories\PacienteRepository.class
+br\edu\imepac\services\PacienteService.class
+br\edu\imepac\dtos\PacienteDtos.class
 br\edu\imepac\ClinicaAgendamento.class
+br\edu\imepac\dtos\PacienteCreateRequest.class
+br\edu\imepac\models\ConsultaModel.class
+br\edu\imepac\models\PacienteModel.class
+br\edu\imepac\controllers\ConsultaController.class
+br\edu\imepac\controllers\PacienteController.class
+br\edu\imepac\dtos\PacienteDto.class
+br\edu\imepac\dtos\ConsultaCreateRequest.class
+br\edu\imepac\dtos\ConsultaDto.class
+br\edu\imepac\repositories\ConsultaRepository.class

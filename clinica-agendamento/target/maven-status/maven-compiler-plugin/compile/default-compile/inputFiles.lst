@@ -1,2 +1,14 @@
-C:\Users\beatr\Clinica_Medica\clinica-agendamento\src\main\java\br\edu\imepac\ClinicaAgendamento.java
-C:\Users\beatr\Clinica_Medica\clinica-agendamento\src\main\java\br\edu\imepac\models\PacientesModels.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\ClinicaAgendamento.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\dtos\ConsultaCreateRequest.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\services\PacienteService.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\dtos\PacienteCreateRequest.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\models\PacienteModel.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\controllers\ConsultaController.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\repositories\PacienteRepository.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\services\ConsultaService.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\repositories\ConsultaRepository.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\dtos\PacienteDtos.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\models\ConsultaModel.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\dtos\PacienteDto.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\controllers\PacienteController.java
+C:\Users\beatr\Projeto_ClinicaMedica\clinica-agendamento\src\main\java\br\edu\imepac\dtos\ConsultaDto.java

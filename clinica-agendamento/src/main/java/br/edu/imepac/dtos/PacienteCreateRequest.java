@@ -4,11 +4,12 @@ import lombok.Data;
 
 @Data
 public class PacienteCreateRequest {
+
     private Long id;
     private String nome;
-    private int rg;
+    private double rg;
     private String orgaoEmissor;
-    private int cpf;
+    private double cpf;
     private String endereco;
     private String numero;
     private String complemento;

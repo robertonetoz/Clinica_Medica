@@ -28,3 +28,10 @@ A aplicação está organizada em pacotes que seguem uma arquitetura típica de 
 ###
 🖥️ *Controllers*: contém os controladores REST que expõem as APIs.
 ###
+
+❗❗❗❗❗❗❗❗ **AVISOS** ❗❗❗❗❗❗❗❗ 
+
+✅ A versão do JDK deve ser utilizado na 17, a versão 22 apresenta as vezes incompatibilidade, o que pode ser resolvido verificando a versão do projeto e configurar para 17;
+✅ Os pacotes "resources" de cada modulo devem ser configurados manualmente com base no seu usuário que você utiliza para acessar o banco de dados MySQL (o padrão costuma ser "root", mas se você personalizou, não esqueça de verificar este detalhe !). Sua senha do MySQL também deverá ser verificada!
+
+ Antes de rodar o projeto, é necessário verificar se o JDK está em uma versão compatível. O ideal é utilizar a versão 17.

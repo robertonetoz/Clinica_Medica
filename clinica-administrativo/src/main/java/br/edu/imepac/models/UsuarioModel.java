@@ -1,22 +1,20 @@
 package br.edu.imepac.models;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "medicos")
+@Table(name = "Usuários")
 @Data
-public class MedicoModel {
+
+public class UsuarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-
     private Long id;
-    private String especialidade;
-
-    private String nome;
-    private String crm;
-
+    private String usuario;
     private String senha;
+
 }

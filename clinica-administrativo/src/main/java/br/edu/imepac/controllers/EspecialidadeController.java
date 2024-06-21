@@ -3,6 +3,7 @@ package br.edu.imepac.controllers;
 import br.edu.imepac.dtos.ConvenioDto;
 import br.edu.imepac.dtos.EspecialidadeCreateRequest;
 import br.edu.imepac.dtos.EspecialidadeDto;
+import br.edu.imepac.dtos.UsuarioDto;
 import br.edu.imepac.services.EspecialidadeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,7 @@ public class EspecialidadeController {
 
     //função de postar
     @PostMapping
-    public ResponseEntity<EspecialidadeDto> saveEspecialidadeConvenio(@RequestBody EspecialidadeCreateRequest especialidadeCreateRequest) {
+    public ResponseEntity<EspecialidadeDto> saveEspecialidade(@RequestBody EspecialidadeCreateRequest especialidadeCreateRequest) {
         logger.info("Request EspecialidadeCreateRequest " );
         EspecialidadeDto savedEspecialidade = especialidadeService.save(especialidadeCreateRequest);
         return new ResponseEntity<>(savedEspecialidade, HttpStatus.CREATED);
@@ -45,6 +46,7 @@ public class EspecialidadeController {
         List<EspecialidadeDto> especialidades = especialidadeService.findAll();
         return new ResponseEntity<>(especialidades, HttpStatus.OK);
     }
+
 
 
     //pega os dados baseado no id informado

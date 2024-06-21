@@ -23,7 +23,7 @@ public class ConvenioController {
 
 
     @PostMapping
-    public ResponseEntity<ConvenioDto> saveConvenioConvenio(@RequestBody ConvenioCreateRequest convenioCreateRequest) {
+    public ResponseEntity<ConvenioDto> saveConvenio(@RequestBody ConvenioCreateRequest convenioCreateRequest) {
         logger.info("Request MedicoCreateRequest " );
         ConvenioDto savedConvenio = convenioService.save(convenioCreateRequest);
         return new ResponseEntity<>(savedConvenio, HttpStatus.CREATED);

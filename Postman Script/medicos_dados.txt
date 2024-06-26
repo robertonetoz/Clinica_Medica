@@ -1,0 +1,31 @@
+DADOS PARA MÉDICOS
+
+
+{"nome": "Dr. João Silva",
+"crm": "12345/SP",
+"especialidade": "Cardiologia"},
+
+
+
+{"nome": "Dra. Camila Rocha",
+"crm": "01234/GO",
+"especialidade": "Endocrinologista"},
+
+
+
+
+{"nome": "Dra. Ana Souza", 
+"crm": "23456/RJ",
+"especialidade": "Pediatra"},
+
+
+{"nome": "Dr. Carlos Oliveira",
+ "crm": "34567/MG",
+ "especialidade": "Ortopedista"},
+
+
+ {"nome": "Dra. Renata Almeida",
+  "crm": "89012/BA",
+  "especialidade": "Oftalmologista"}
+
+

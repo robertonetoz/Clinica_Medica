@@ -20,6 +20,14 @@ public class ProntuarioModel {
  private String receituario;
  private String exames;
 
+ public void setRegistro(String registro) {
+
+ }
+
+ public void setRegistro(int registro) {
+
+ }
+
  //falta o id_paciente, mas nao acho que vou colocar no momento, por
     //interferencia entre os modulos;
 

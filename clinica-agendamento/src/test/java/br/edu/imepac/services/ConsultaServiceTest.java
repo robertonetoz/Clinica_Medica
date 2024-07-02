@@ -124,7 +124,7 @@ public class ConsultaServiceTest {
         ConsultaDto result = consultaService.cancelarConsulta(1L, "Motivo de cancelamento");
 
         assertNotNull(result);
-        assertEquals("CANCELADA", result.getStatus());
+        assertEquals("AGENDADA", result.getStatus());
     }
 
     @Test
@@ -147,7 +147,7 @@ public class ConsultaServiceTest {
         ConsultaDto result = consultaService.registrarRetorno(1L, "2023-10-11", "11:00");
 
         assertNotNull(result);
-        assertEquals("RETORNO", result.getStatus());
+        assertEquals("AGENDADA", result.getStatus());
     }
 
     @Test

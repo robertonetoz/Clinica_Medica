@@ -7,7 +7,7 @@ public class ProntuarioCreateRequest {
     private Long id;
     //chave primária da tabela "prontuarios";
 
-    private int registro;
+    private String registro;
     private String historico;
     private String receituario;
     private String exames;

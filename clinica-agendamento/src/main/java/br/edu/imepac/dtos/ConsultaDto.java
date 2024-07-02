@@ -16,12 +16,6 @@ public class ConsultaDto {
     private boolean retorno;
     private boolean cancelamento;
     private String motivoCancelamento;
+    private String status;
 
-    public String setStatus(String agendada) {
-        return null;
-    }
-
-    public String getStatus() {
-        return null;
-    }
 }

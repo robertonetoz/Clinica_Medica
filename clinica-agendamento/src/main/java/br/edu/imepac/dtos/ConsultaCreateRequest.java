@@ -12,5 +12,7 @@ public class ConsultaCreateRequest {
     private String data;
     private String hora;
     private boolean retorno;
-
+    private boolean cancelamento;
+    private String motivoCancelamento;
+    private String status;
 }

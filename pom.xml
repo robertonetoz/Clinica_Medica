@@ -21,6 +21,7 @@
     <module>clinica-administrativo</module>
     <module>clinica-agendamento</module>
     <module>clinica-atendimento</module>
+    <module>clinica-commons</module>
   </modules>
 
   <dependencyManagement>
@@ -30,35 +31,49 @@
         <artifactId>spring-boot-starter-web</artifactId>
         <version>3.2.5</version>
       </dependency>
+
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-data-jpa</artifactId>
         <version>3.2.5</version>
       </dependency>
+
       <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>1.18.24</version> <!-- Use a versão mais recente disponível -->
         <scope>provided</scope>
       </dependency>
+
       <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
         <version>8.0.27</version>
       </dependency>
+
       <dependency>
         <groupId>org.modelmapper</groupId>
         <artifactId>modelmapper</artifactId>
         <version>2.4.4</version>
       </dependency>
 
-
-
       <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
         <version>4.0.1</version>
         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>br.edu.imepac</groupId>
+        <artifactId>clinica-commons</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>2.0.3</version>
       </dependency>
 
     </dependencies>

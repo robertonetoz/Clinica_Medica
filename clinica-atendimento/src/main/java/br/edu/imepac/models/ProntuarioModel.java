@@ -20,7 +20,9 @@ public class ProntuarioModel {
  private String receituario;
  private String exames;
 
+ @ManyToOne
+ @JoinColumn(name = "cd_paciente", referencedColumnName = "id")
+ private PacienteModel paciente; // relacionamento com a entidade PacienteModel
 
- //falta o id_paciente, mas nao acho que vou colocar no momento, por
-    //interferencia entre os modulos;
 }
+

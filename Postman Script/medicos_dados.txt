@@ -29,3 +29,18 @@ DADOS PARA MÉDICOS
   "especialidade": "Oftalmologista"}
 
 
+
+{
+    "registro": 12345,
+    "cd_paciente": 1,
+    "cd_medico": 1,
+    "data": "2023-10-01",
+    "hora": "10:00",
+    "retorno": false,
+    "cancelamento": false,
+    "motivo_cancelamento": "",
+    "status": "AGENDADA"
+}
+
+consulta
+

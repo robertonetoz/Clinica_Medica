@@ -96,6 +96,12 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
         </dependency>
+        <dependency>
+            <groupId>br.edu.imepac</groupId>
+            <artifactId>clinica-agendamento</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
 
 
     </dependencies>

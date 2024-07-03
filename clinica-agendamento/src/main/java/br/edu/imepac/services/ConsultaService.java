@@ -54,12 +54,12 @@ public class ConsultaService {
 
 
 
-    public ConsultaDto cancelarConsulta(Long id, String motivoCancelamento) {
+    public ConsultaDto cancelarConsulta(Long id, String motivo_cancelamento) {
         Optional<ConsultaModel> consultaOptional = consultaRepository.findById(id);
         if (consultaOptional.isPresent()) {
             ConsultaModel consulta = consultaOptional.get();
             consulta.setStatus("CANCELADA");
-            consulta.setMotivoCancelamento(motivoCancelamento);
+            consulta.setMotivo_cancelamento(motivo_cancelamento);
             ConsultaModel savedConsulta = consultaRepository.save(consulta);
             return modelMapper.map(savedConsulta, ConsultaDto.class);
         } else {
@@ -98,5 +98,10 @@ public class ConsultaService {
         } else {
             return null;
         }
+    }
+
+    public void delete(Long id) {
+        consultaRepository.deleteById(id);
+
     }
 }

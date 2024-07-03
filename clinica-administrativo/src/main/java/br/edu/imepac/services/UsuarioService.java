@@ -73,7 +73,7 @@ public class UsuarioService {
     public UsuarioDto save(UsuarioCreateRequest usuarioRequest) {
         UsuarioModel usuarioModel = modelMapper.map(usuarioRequest, UsuarioModel.class);
         UsuarioModel savedUsuario = usuarioRepository.save(usuarioModel);
-        UsuarioDto usuarioDto = modelMapper.map(usuarioModel    , UsuarioDto.class);
+        UsuarioDto usuarioDto = modelMapper.map(usuarioModel, UsuarioDto.class);
         return usuarioDto;
     }
 

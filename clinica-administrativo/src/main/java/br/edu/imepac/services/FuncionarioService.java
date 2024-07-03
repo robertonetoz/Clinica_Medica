@@ -35,7 +35,7 @@ public class FuncionarioService {
             funcionarioDto.setId(funcionario.getId());
             funcionarioDto.setNome(funcionario.getNome());
             funcionarioDto.setRg(funcionario.getRg());
-            funcionarioDto.setOrgaoEmissor(funcionario.getOrgaoEmissor());
+            funcionarioDto.setOrgao_emissor(funcionario.getOrgao_emissor());
             funcionarioDto.setCpf(funcionario.getCpf());
             funcionarioDto.setEndereco(funcionario.getEndereco());
             funcionarioDto.setNumero(funcionario.getNumero());
@@ -61,7 +61,7 @@ public class FuncionarioService {
             FuncionarioModel funcionarioModel = optionalFuncionario.get();
             funcionarioModel.setNome(funcionarioDetails.getNome());
             funcionarioModel.setRg(funcionarioDetails.getRg());
-            funcionarioModel.setOrgaoEmissor(funcionarioDetails.getOrgaoEmissor());
+            funcionarioModel.setOrgao_emissor(funcionarioDetails.getOrgao_emissor());
             funcionarioModel.setCpf(funcionarioDetails.getCpf());
             funcionarioModel.setEndereco(funcionarioDetails.getEndereco());
             funcionarioModel.setNumero(funcionarioDetails.getNumero());
@@ -81,7 +81,7 @@ public class FuncionarioService {
             funcionarioDto.setId(updatedFuncionario.getId());
             funcionarioDto.setNome(updatedFuncionario.getNome());
             funcionarioDto.setRg(updatedFuncionario.getRg());
-            funcionarioDto.setOrgaoEmissor(updatedFuncionario.getOrgaoEmissor());
+            funcionarioDto.setOrgao_emissor(updatedFuncionario.getOrgao_emissor());
             funcionarioDto.setCpf(updatedFuncionario.getCpf());
             funcionarioDto.setEndereco(updatedFuncionario.getEndereco());
             funcionarioDto.setNumero(updatedFuncionario.getNumero());
@@ -120,7 +120,7 @@ public class FuncionarioService {
             funcionarioDto.setId(funcionarioModel.getId());
             funcionarioDto.setNome(funcionarioModel.getNome());
             funcionarioDto.setRg(funcionarioModel.getRg());
-            funcionarioDto.setOrgaoEmissor(funcionarioModel.getOrgaoEmissor());
+            funcionarioDto.setOrgao_emissor(funcionarioModel.getOrgao_emissor());
             funcionarioDto.setCpf(funcionarioModel.getCpf());
             funcionarioDto.setEndereco(funcionarioModel.getEndereco());
             funcionarioDto.setNumero(funcionarioModel.getNumero());

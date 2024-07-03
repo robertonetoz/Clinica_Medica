@@ -8,7 +8,7 @@ public class PacienteDto {
     private Long id;
     private String nome;
     private double rg;
-    private String orgaoEmissor;
+    private String orgao_emissor;
     private double cpf;
     private String endereco;
     private String numero;
@@ -20,8 +20,8 @@ public class PacienteDto {
     private String celular;
     private String sexo;
     private String nascimento;
-    private String possuiConvenio;
-    private String nomeConvenio;
+    private String possui_convenio;
+    private String nome_convenio;
 
 
 }

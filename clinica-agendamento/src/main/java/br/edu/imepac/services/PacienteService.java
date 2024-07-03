@@ -38,7 +38,7 @@ public class PacienteService {
             PacienteModel pacienteModel = optionalPaciente.get();
             pacienteModel.setNome(pacienteDetails.getNome());
             pacienteModel.setRg(pacienteDetails.getRg());
-            pacienteModel.setOrgaoEmissor(pacienteDetails.getOrgaoEmissor());
+            pacienteModel.setOrgao_emissor(pacienteDetails.getOrgao_emissor());
             pacienteModel.setCpf(pacienteDetails.getCpf());
             pacienteModel.setEndereco(pacienteDetails.getEndereco());
             pacienteModel.setNumero(pacienteDetails.getNumero());
@@ -50,8 +50,8 @@ public class PacienteService {
             pacienteModel.setCelular(pacienteDetails.getCelular());
             pacienteModel.setSexo(pacienteDetails.getSexo());
             pacienteModel.setNascimento(pacienteDetails.getNascimento());
-            pacienteModel.setPossuiConvenio(pacienteDetails.getPossuiConvenio());
-            pacienteModel.setNomeConvenio(pacienteDetails.getNomeConvenio());
+            pacienteModel.setPossui_convenio(pacienteDetails.getPossui_convenio());
+            pacienteModel.setNome_convenio(pacienteDetails.getNome_convenio());
 
             PacienteModel updatedPaciente = pacienteRepository.save(pacienteModel);
 

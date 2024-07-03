@@ -23,6 +23,4 @@ public class ProntuarioModel {
 
  //falta o id_paciente, mas nao acho que vou colocar no momento, por
     //interferencia entre os modulos;
-
-
 }

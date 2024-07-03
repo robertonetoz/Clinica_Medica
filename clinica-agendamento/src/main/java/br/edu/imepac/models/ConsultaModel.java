@@ -3,16 +3,16 @@ package br.edu.imepac.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
-
 @Entity
-@Table (name = "consultas")
+@Table(name = "consultas")
 @Data
 public class ConsultaModel {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private int registro;
 
     @ManyToOne
     @JoinColumn(name = "cd_paciente", referencedColumnName = "id")
@@ -22,19 +22,17 @@ public class ConsultaModel {
     @JoinColumn(name = "cd_medico", referencedColumnName = "id")
     private MedicoModel medico;
 
-
-    private int registro;
     private String data;
     private String hora;
-
-    private String status; // AGENDADA, REALIZADA, CANCELADA
-
-    private String motivoCancelamento;
+    private boolean retorno;
+    private boolean cancelamento;
+    private String motivo_cancelamento;
+    private String status;
+}
 
 
     //obs: a coluna "cd_paciente" e "cd_medico" já estão sendo adicionadas a tabela Consultas;
 
-}
 
 
 

@@ -60,4 +60,10 @@ public class ConsultaController {
         ConsultaDto consultaDto = consultaService.registrarRetorno(id, data, hora);
         return new ResponseEntity<>(consultaDto, HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteConsulta(@PathVariable Long id) {
+        consultaService.delete(id);
+    }
 }
